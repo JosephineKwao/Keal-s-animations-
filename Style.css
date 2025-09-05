@@ -24,7 +24,17 @@ header h1 {
   margin: 30px 0 20px;
   font-size: 2.5rem;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  font-family: "Comic Neue", "Poppins", cursive; 
+  text-align: center;
+
 }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-12px); }
+  60% { transform: translateY(-6px); }
+}
+
 
 
 #search-form {
@@ -33,24 +43,24 @@ header h1 {
   gap: 10px;
   background: rgb(32, 11, 11);
   padding: 12px 20px;
-  border-radius: 50px;
+  border-radius: 30px;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 #search-input {
-  padding: 10px 15px;
+  padding: 15px 30px;
   border: none;
   border-radius: 30px;
   outline: none;
   font-size: 1rem;
-  width: 250px;
+  width: 700px;
 }
 
 #search-form button {
   background: #ff4081;
   border: none;
-  padding: 10px 18px;
+  padding: 15px 30px;
   border-radius: 30px;
   font-size: 1rem;
   color: white;
