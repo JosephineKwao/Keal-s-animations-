@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const LIMIT = 12;
   let loadMoreBtn;
 
-  // Handle form submit
+  
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     query = input.value.trim();
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     await fetchGifs(true);
   });
 
-  // Fetch GIFs
+  
   async function fetchGifs(reset = false) {
     try {
       const response = await fetch(
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Display GIFs
+  
   function displayGifs(gifs, reset) {
     if (reset) gifContainer.innerHTML = "";
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gifContainer.appendChild(img);
     });
 
-    // Create Load More button if it doesn't exist
+    
     if (!loadMoreBtn) {
       loadMoreBtn = document.createElement("button");
       loadMoreBtn.id = "load-more";
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gifContainer.insertAdjacentElement("afterend", loadMoreBtn);
     }
 
-    // Show/Hide Load More depending on results
+    
     loadMoreBtn.style.display = gifs.length < LIMIT ? "none" : "block";
   }
 });
