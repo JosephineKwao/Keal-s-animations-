@@ -3,77 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Keal's Animations</title>
+  <title>Keal's GIF World</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   
   <header>
-  <h1>Keal’s GIF World 🌟</h1>
-  <h2 class="site-title">Your Hub for Trending & Random GIFs — Search, explore, and enjoy endless animations </h2>
+    <h1>Keal’s GIF World 🌟</h1>
+    <h2 class="site-title">Your Hub for Trending & Random GIFs — Search, explore, and enjoy endless animations</h2>
 
-  
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Trending</a></li>
-      <li><a href="#">Random</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Random</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
 
-  <div class="search-wrapper">
-    <form id="search-form">
-      <input type="text" id="searchTerm" placeholder="Search GIFs..." required>
-      <button type="submit">Search</button>
-    </form>
-  </div>
-</header>
-
+    <div class="search-wrapper">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search GIFs..." required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
 
   <main>
-    <div id="gifContainer"></div>
+    <div id="gif-container"></div>
     <button id="load-more" style="display:none;">Load More</button>
   </main>
 
-  <script>
-    const API_KEY = "C83podDgM2HxGlxV4C5nfQHobQFcdx51"; 
-    const gifContainer = document.getElementById('gifContainer');
-    const searchForm = document.getElementById('search-form');
+  <footer>
+    <p>Powered by <a href="https://giphy.com/" target="_blank">GIPHY</a></p>
+    <p>© 2025 Keal’s Animations. All rights reserved.</p>
+  </footer>
 
-    async function searchGifs(event) {
-      event.preventDefault(); 
-      const searchTerm = document.getElementById('searchTerm').value;
-      gifContainer.innerHTML = ""; 
-
-      const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=6&rating=g`;
-
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        data.data.forEach(gif => {
-          const img = document.createElement('img');
-          img.src = gif.images.fixed_height.url;
-          gifContainer.appendChild(img);
-        });
-      } catch (error) {
-        console.error("Error fetching GIFs:", error);
-      }
-    }
-
-    searchForm.addEventListener('submit', searchGifs);
-  </script>
-
-<main>
-  <div id="gifContainer"></div>
-  <button id="load-more" style="display:none;">Load More</button>
-</main>
-
-<footer>
-  <p>Powered by <a href="https://giphy.com/" target="_blank">GIPHY</a></p>
-  <p>© 2025 Keal’s Animations. All rights reserved.</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
