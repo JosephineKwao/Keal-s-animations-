@@ -119,4 +119,46 @@ header h1 {
   font-weight: bold;
  
 }
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main {
+  flex: 1;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  background: transparent;
+  border: none;
+}
+
+footer a {
+  color: #ffccff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
 

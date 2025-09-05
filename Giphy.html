@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <header>
-    <h1>Keal's Animations</h1>
+  <h1>Keal’s GIF World 🌟</h1>
+  <p class="tagline">Search, explore, and enjoy endless animations</p>
 
-    <div class="search-wrapper">
-      <form id="search-form">
-        <input type="text" id="searchTerm" placeholder="Search GIFs..." required>
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </header>
+  <div class="search-wrapper">
+    <form id="search-form">
+      <input type="text" id="searchTerm" placeholder="Search GIFs..." required>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
 
-  <h1 class="site-title">Keal's Gif Explorer</h1>
+
+  <h2 class="site-title">Trending & Random GIFs</h2>
+
   <nav>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
@@ -61,5 +65,18 @@
 
     searchForm.addEventListener('submit', searchGifs);
   </script>
+
+<main>
+  <div id="gifContainer"></div>
+  <button id="load-more" style="display:none;">Load More</button>
+</main>
+
+<footer>
+  <p>Powered by <a href="https://giphy.com/" target="_blank">GIPHY</a></p>
+  <p>© 2025 Keal’s Animations. All rights reserved.</p>
+</footer>
+
+
+
 </body>
 </html>
