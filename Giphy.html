@@ -45,7 +45,7 @@
     async function searchGifs(event) {
       event.preventDefault(); // Prevent form reload
       const searchTerm = document.getElementById('searchTerm').value;
-      gifContainer.innerHTML = ""; // Clear old gifs
+      gifContainer.innerHTML = ""; 
 
       const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=6&rating=g`;
 
