@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const LIMIT = 12;
   let loadMoreBtn;
 
-  
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     query = input.value.trim();
@@ -27,23 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
         `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=${LIMIT}&offset=${offset}&rating=G&lang=en`
       );
       const data = await response.json();
-      displayGifs(data.data, reset);
+      displayGifs(data.data, reset); 
     } catch (error) {
       gifContainer.innerHTML = "<p>Something went wrong. Try again!</p>";
       console.error(error);
     }
-  }
+  } 
 
   
   function displayGifs(gifs, reset) {
-    if (reset) gifContainer.innerHTML = "";
+    
+    if (reset) {
+      gifContainer.innerHTML = "";
+      if (loadMoreBtn) loadMoreBtn.style.display = "none";
+    }
 
+    
     if (gifs.length === 0 && offset === 0) {
       gifContainer.innerHTML = "<p>No GIFs found. Try another search!</p>";
       if (loadMoreBtn) loadMoreBtn.style.display = "none";
       return;
     }
 
+    
     gifs.forEach((gif) => {
       const img = document.createElement("img");
       img.src = gif.images.fixed_height.url;
@@ -65,6 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     
-    loadMoreBtn.style.display = gifs.length < LIMIT ? "none" : "block";
+    if (offset + gifs.length >= LIMIT) {
+      loadMoreBtn.style.display = "block";
+    } else {
+      loadMoreBtn.style.display = "none";
+    }
   }
 });
