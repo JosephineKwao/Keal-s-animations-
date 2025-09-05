@@ -10,18 +10,9 @@
   
   <header>
   <h1>Keal’s GIF World 🌟</h1>
+  <h2 class="site-title">Your Hub for Trending & Random GIFs</h2>
+
   <p class="tagline">Search, explore, and enjoy endless animations</p>
-
-  <div class="search-wrapper">
-    <form id="search-form">
-      <input type="text" id="searchTerm" placeholder="Search GIFs..." required>
-      <button type="submit">Search</button>
-    </form>
-  </div>
-</header>
-
-
-  <h2 class="site-title">Trending & Random GIFs</h2>
 
   <nav>
     <ul class="nav-links">
@@ -31,6 +22,15 @@
       <li><a href="#">About</a></li>
     </ul>
   </nav>
+
+  <div class="search-wrapper">
+    <form id="search-form">
+      <input type="text" id="searchTerm" placeholder="Search GIFs..." required>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
 
   <main>
     <div id="gifContainer"></div>
@@ -43,7 +43,7 @@
     const searchForm = document.getElementById('search-form');
 
     async function searchGifs(event) {
-      event.preventDefault(); // Prevent form reload
+      event.preventDefault(); 
       const searchTerm = document.getElementById('searchTerm').value;
       gifContainer.innerHTML = ""; 
 
