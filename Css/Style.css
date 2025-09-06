@@ -27,6 +27,7 @@ main {
 header {
   text-align: left;
   padding: 20px 10px;
+
 }
 
 header h1 {
@@ -41,6 +42,8 @@ header h2 {
   font-size: 1rem;
   font-weight: normal;
   margin-bottom: 20px;
+  font-family: "JetBrains Mono, Fira Code, Consolas, 'Courier New', monospace"
+
 }
 
 
@@ -148,11 +151,15 @@ footer {
   color: bisque;
   font-size: 0.9rem;
   background: transparent;
+  font-family: "JetBrains Mono, Fira Code, Consolas, 'Courier New', monospace"
+
 }
 
 footer a {
   color: #ffccff;
   text-decoration: none;
+  font-family: "JetBrains Mono, Fira Code, Consolas, 'Courier New', monospace"
+
 }
 
 footer a:hover {
